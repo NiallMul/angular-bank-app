@@ -1,0 +1,26 @@
+<div class="panel panel-default" ng-controller="addAccountController as addaccountCtrl">
+	<div ng-show="addaccountCtrl.isUpdate()">
+		<form class="simple-form">
+			<label>First name: <input type="text" ng-model="fName"/></label>
+			<br>
+			<label>Last name: <input type="text" ng-model="lName"/></label>
+			<br>
+			<label>Account number: <input type="text" ng-model="accntNum"/></label>
+			<br>
+			<button type="button" ng-click="addaccountCtrl.addAccount(fName,lName,accntNum)">Add account</button>
+		</form>
+	</div>
+</div>
+<div class="panel panel-default" ng-controller="updateAccountController as updateaccountCtrl">
+	<div ng-show="updateaccountCtrl.isUpdate()">
+		<form class="simple-form">
+			<label>First name: <input type="text" ng-model="updateaccountCtrl.fName"/></label>
+			<br>
+			<label>Last name: <input type="text" ng-model="updateaccountCtrl.lName"/></label>
+			<br>
+			<label>Account number: <input type="text" ng-model="updateaccountCtrl.accntNum"/></label>
+			<br>
+			<button type="button" ng-click="updateaccountCtrl.updateAccount()">Update account</button>
+		</form>
+	</div>
+</div>

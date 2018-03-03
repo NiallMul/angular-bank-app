@@ -1,0 +1,58 @@
+<div class="panel panel-default" ng-controller="getAccountController as accountCtrl">
+	    <div class="panel-heading">Accounts page</div>
+	    <div class="panel-body">
+   		{{accountCtrl.test}}
+   		<div ng-hide="accountCtrl.isHidden">
+        	<h3><span>Accounts table</span></h3>
+        	<table class="table">
+        		<tr>
+        			<th>{{'first_name' | uppercase}}</th>
+        			<th>{{'surname' | uppercase}}</th>
+        			<th>{{'account_number' | uppercase}}</th>
+        		</tr>
+        		<tr ng-repeat="account in accountCtrl.accounts">
+        			<td ng-model="fName">{{account.firstName}}</td>
+        			<td ng-model="lName">{{account.secondName}}</td>
+        			<td ng-model="accntNum">{{account.accountNumber}}</td>
+        			<td><input type="button" value="delete" ng-click="accountCtrl.removeAccount(account.id,account.firstName,account.secondName,account.accountNumber)"/></td>
+        			<td><input type="button" value="update" ng-click="accountCtrl.updateAccount(account.id,account.firstName,account.secondName,account.accountNumber)"/></td>
+        		</tr>
+        	</table>
+        </div>
+        <button class="btn"ng-click="accountCtrl.hideTable()">Hide accounts</button>
+	</div>
+</div>
+
+<!-- {
+    "firstName": "Niall",
+    "secondName": "Mulready",
+    "accountNumber": "1235",
+    "transactions": [{
+      "transactionName": "Asda",
+      "transactionNumber": "12"
+    }]
+  }{
+    "firstName": "Sean",
+    "secondName": "McGee",
+    "accountNumber": "1565",
+    "transactions": [{
+      "transactionName": "Aldi",
+      "transactionNumber": "11"
+    }]
+  }{
+    "firstName": "Joshua",
+    "secondName": "Sherwood",
+    "accountNumber": "1158",
+    "transactions": [{
+      "transactionName": "Booths",
+      "transactionNumber": "56"
+    }]
+  }{
+    "firstName": "Conor",
+    "secondName": "Harney",
+    "accountNumber": "1748",
+    "transactions": [{
+      "transactionName": "Great wall",
+      "transactionNumber": "108"
+    }]
+  } -->

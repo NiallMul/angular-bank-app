@@ -55,6 +55,17 @@ public class AccountMapRepository implements AccountRepository {
 		accountMap.remove(id);
 		return "{\"message\": \"accout sucessfully removed\"}";
 	}
+	@Override
+	public String updateAccount(String account) {
+		Account accntToUpdate = util.getObjectForJSON(account, Account.class);
+		Account accntInDB = accountMap.get(accntToUpdate.getId());
+		if(accntToUpdate!=null&&accntInDB!=null) {
+			accountMap.get(accntInDB).setFirstName(accntToUpdate.getFirstName());
+			accountMap.get(accntInDB).setSecondName(accntToUpdate.getSecondName());
+			accountMap.get(accntInDB).setAccountNumber(accntToUpdate.getAccountNumber());
+		}
+		return "{\"message\": \"account sucessfully updated\"}";
+	}
 
 	private void initAccountMap() {
 		LOGGER.info("AccountMapRepository + initAccountMap");

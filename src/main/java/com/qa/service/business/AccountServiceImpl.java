@@ -30,6 +30,13 @@ public class AccountServiceImpl implements AccountService {
 		return repo.deleteAccount(id);
 
 	}
+	@Override
+	public String updateAccount(String account) {
+		LOGGER.info("AccountDBRepository this : "+account);
+		LOGGER.info("In AccountServiceImpl updateAccount ");
+		return repo.updateAccount(account);
+
+	}
 
 	public void setRepo(AccountRepository repo) {
 		this.repo = repo;
