@@ -49,7 +49,7 @@
 				secondName : vm.lName,
 				accountNumber : vm.accntNum
 			};
-
+			if($window.confirm("Are you sure you wish to delete this account")){
 			accountService.deleteAccount(vm.account).then(function(results) {
     			$log.log(results);
 				if(results.message==="account successfully deleted"){
@@ -57,7 +57,7 @@
 					init();
 				}
 			});
-		}
+		}}
 
 	};
 

@@ -29,13 +29,15 @@
        	firstName:vm.fName,
     	secondName:vm.lName,
     	accountNumber:vm.accntNum};
-	
+       	if($window.confirm("Are you sure you wish to edit this account")){
+			
        	UpdateAccountService.updateAccount(vm.account).then(function(results){
 			$log.log(results.message);
 		if(results.message==="account successfully updated"){
 			$window.alert("Update successful");
 			$window.location.href = 'http://localhost:8080/customer-app/#/getAccount';
 		}});
+       	}
        }
     };
 
